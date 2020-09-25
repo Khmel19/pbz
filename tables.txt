@@ -1,0 +1,84 @@
+CREATE TABLE organization
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_course INTEGER,
+    name VARCHAR(25),
+    address VARCHAR(25),
+    telephone VARCHAR(25),
+    email VARCHAR(25),
+    FOREIGN KEY (id_course) REFERENCES course(id)
+);
+
+CREATE TABLE course
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(25),
+    type VARCHAR(25),
+    count_of_days INTEGER,
+    count_of trainees INTEGER,
+    id_price INTEGER,
+    FOREIGN KEY (id_price) REFERENCES price(id)
+);
+
+CREATE TABLE price
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    price INTEGER,
+    date DATE
+);
+
+CREATE TABLE teacher
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(25),
+    birthday DATE,
+    education VARCHAR(25),
+    category VARCHAR(25)
+);
+
+CREATE TABLE teacher_course
+(
+    id_teacher INTEGER,
+    id_course INTEGER,
+    start_date DATE,
+    end_date DATE,
+    FOREIGN KEY (id_teacher) REFERENCES teacher(id),
+    FOREIGN KEY (id_course) REFERENCES course(id)  
+);
+
+CREATE TABLE bid
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_company INTEGER,
+    id_course INTEGER,
+    term INTEGER,
+    count_of trainees INTEGER,
+    FOREIGN KEY (id_company) REFERENCES company(id),
+    FOREIGN KEY (id_course) REFERENCES course(id)  
+);
+
+CREATE TABLE company
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(25),
+    telephone VARCHAR(25),
+    email VARCHAR(25),
+    address VARCHAR(25)
+);
+  
+CREATE TABLE collaborator
+(
+    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(25),
+    position VARCHAR(25),
+    id_course INTEGER,
+    FOREIGN KEY (id_course) REFERENCES course(id) 
+);
+
+CREATE TABLE company_collaborator
+(
+    id_collaborator INTEGER,
+    id_company INTEGER,
+    FOREIGN KEY (id_collaborator) REFERENCES collaborator(id) 
+    FOREIGN KEY (id_company) REFERENCES company(id) 
+);
