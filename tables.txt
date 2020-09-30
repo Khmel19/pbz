@@ -15,7 +15,7 @@ CREATE TABLE course
     name VARCHAR(25),
     type VARCHAR(25),
     count_of_days INTEGER,
-    count_of trainees INTEGER,
+    count_of_trainees INTEGER,
     id_price INTEGER,
     FOREIGN KEY (id_price) REFERENCES price(id)
 );
@@ -52,7 +52,7 @@ CREATE TABLE bid
     id_company INTEGER,
     id_course INTEGER,
     term INTEGER,
-    count_of trainees INTEGER,
+    count_of_trainees INTEGER,
     FOREIGN KEY (id_company) REFERENCES company(id),
     FOREIGN KEY (id_course) REFERENCES course(id)  
 );
