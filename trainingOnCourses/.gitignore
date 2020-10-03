@@ -5,4 +5,4 @@ target/*
 out
 log
 lib
-*.DS_Store
+**/.DS_Store
