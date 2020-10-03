@@ -79,6 +79,6 @@ CREATE TABLE company_collaborator
 (
     id_collaborator INTEGER,
     id_company INTEGER,
-    FOREIGN KEY (id_collaborator) REFERENCES collaborator(id) 
+    FOREIGN KEY (id_collaborator) REFERENCES collaborator(id) ,
     FOREIGN KEY (id_company) REFERENCES company(id) 
 );
