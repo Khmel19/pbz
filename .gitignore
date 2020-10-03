@@ -1,0 +1,8 @@
+# Default ignored files
+trainingOnCourses/.idea/*
+trainingOnCourses/target/*
+*.iml
+out
+log
+lib
+.DS_Store
