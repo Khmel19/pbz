@@ -17,8 +17,12 @@ public class TeacherDao implements GenericDao<Teacher> {
 
     @Override
     public void create(Teacher teacher) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO  teacher VALUES(?,?,?,?)");
-        preparedStatement.setString(1, teacher.getName());
+        PreparedStatement preparedStatement=connection.prepareStatement("INSERT INTO  "+teacher.getClass().getSimpleName().toLowerCase()+" VALUES(?,?,?,?)");
+        preparedStatement.setString(1,teacher.getName());
+        preparedStatement.setString(2,teacher.getBirthday());
+        preparedStatement.setString(3,teacher.getEducation());
+        preparedStatement.setString(4,teacher.getCategory());
+        preparedStatement.execute();
 
     }
 
