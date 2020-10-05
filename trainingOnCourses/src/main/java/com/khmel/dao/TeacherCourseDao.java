@@ -3,13 +3,14 @@ package com.khmel.dao;
 import com.khmel.db.DB;
 import com.khmel.model.TeacherCourse;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class TeacherCourseDao implements GenericDao<TeacherCourse>{
-    private DB bd;
+    private Connection connection;
 
-    public TeacherCourseDao(DB bd) {
-        this.bd = bd;
+    public TeacherCourseDao() {
+        this.connection = DB.getConnection();
     }
 
     @Override
