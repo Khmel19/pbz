@@ -3,23 +3,19 @@ package com.khmel.dao;
 import com.khmel.db.DB;
 import com.khmel.model.Organization;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class OrganizationDao implements GenericDao<Organization>{
-    private DB bd;
+    private Connection connection;
 
-    public OrganizationDao(DB bd) {
-        this.bd = bd;
+    public OrganizationDao() {
+        this.connection = DB.getConnection();
     }
 
     @Override
-    public Organization create() {
-        return null;
-    }
+    public void create() {
 
-    @Override
-    public Organization persist(Organization object) {
-        return null;
     }
 
     @Override

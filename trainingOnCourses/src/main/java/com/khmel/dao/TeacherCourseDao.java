@@ -13,13 +13,8 @@ public class TeacherCourseDao implements GenericDao<TeacherCourse>{
     }
 
     @Override
-    public TeacherCourse create() {
-        return null;
-    }
+    public void create() {
 
-    @Override
-    public TeacherCourse persist(TeacherCourse object) {
-        return null;
     }
 
     @Override

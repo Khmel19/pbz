@@ -3,23 +3,19 @@ package com.khmel.dao;
 import com.khmel.db.DB;
 import com.khmel.model.CompanyCollaborator;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class CompanyCollaboratorDao implements GenericDao<CompanyCollaborator>{
-    private DB bd;
+    private Connection connection;
 
-    public CompanyCollaboratorDao(DB bd) {
-        this.bd = bd;
+    public CompanyCollaboratorDao() {
+        this.connection = DB.getConnection();
     }
 
     @Override
-    public CompanyCollaborator create() {
-        return null;
-    }
+    public void create() {
 
-    @Override
-    public CompanyCollaborator persist(CompanyCollaborator object) {
-        return null;
     }
 
     @Override

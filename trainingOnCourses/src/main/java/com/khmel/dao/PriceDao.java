@@ -9,18 +9,13 @@ import java.util.List;
 public class PriceDao implements GenericDao<Price>{
     private Connection connection;
 
-    public PriceDao(DB bd) {
-        this.connection = bd.getConnection();
+    public PriceDao(Connection connection) {
+        this.connection = connection;
     }
 
     @Override
-    public Price create() {
-        return null;
-    }
+    public void create() {
 
-    @Override
-    public Price persist(Price object) {
-        return null;
     }
 
     @Override

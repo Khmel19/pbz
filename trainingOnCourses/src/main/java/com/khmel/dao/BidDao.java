@@ -3,29 +3,20 @@ package com.khmel.dao;
 import com.khmel.db.DB;
 import com.khmel.model.Bid;
 
+import java.io.FileNotFoundException;
+import java.sql.Connection;
 import java.util.List;
 
-public class BidDao implements  big<Bid>{
-private DB bd;
-
-    public BidDao(DB bd) {
-        this.bd = bd;
+public class BidDao implements  GenericDao<Bid>{
+    private Connection connection;
+    public BidDao() throws FileNotFoundException {
+        this.connection = DB.getConnection();
     }
 
 
     @Override
-    public Bid show() {
-        return null;
-    }
+    public void create() {
 
-    @Override
-    public Bid create() {
-        return null;
-    }
-
-    @Override
-    public Bid persist(Bid object) {
-        return null;
     }
 
     @Override

@@ -3,23 +3,19 @@ package com.khmel.dao;
 import com.khmel.db.DB;
 import com.khmel.model.Course;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class CourseDao implements GenericDao<Course>{
-    private DB bd;
+    private Connection connection;
 
-    public CourseDao(DB bd) {
-        this.bd = bd;
+    public CourseDao(Connection connection) {
+        this.connection = DB.getConnection();
     }
 
     @Override
-    public Course create() {
-        return null;
-    }
+    public void create() {
 
-    @Override
-    public Course persist(Course object) {
-        return null;
     }
 
     @Override
