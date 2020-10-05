@@ -9,8 +9,8 @@ import java.util.List;
 public class PriceDao implements GenericDao<Price>{
     private Connection connection;
 
-    public PriceDao(Connection connection) {
-        this.connection = connection;
+    public PriceDao() {
+        this.connection = DB.getConnection();
     }
 
     @Override

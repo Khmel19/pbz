@@ -9,7 +9,7 @@ import java.util.List;
 public class CourseDao implements GenericDao<Course>{
     private Connection connection;
 
-    public CourseDao(Connection connection) {
+    public CourseDao() {
         this.connection = DB.getConnection();
     }
 

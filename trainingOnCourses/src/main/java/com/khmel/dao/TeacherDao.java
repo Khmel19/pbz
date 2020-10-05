@@ -9,8 +9,8 @@ import java.util.List;
 public class TeacherDao implements GenericDao<Teacher>{
 private Connection connection;
 
-    public TeacherDao(Connection connection) {
-        this.connection = connection;
+    public TeacherDao() {
+        this.connection = DB.getConnection();
     }
 
     @Override
