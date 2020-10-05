@@ -14,7 +14,7 @@ public class OrganizationDao implements GenericDao<Organization>{
     }
 
     @Override
-    public void create() {
+    public void create(Organization organization) {
 
     }
 

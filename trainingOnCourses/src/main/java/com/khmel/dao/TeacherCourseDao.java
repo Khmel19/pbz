@@ -14,7 +14,7 @@ public class TeacherCourseDao implements GenericDao<TeacherCourse>{
     }
 
     @Override
-    public void create() {
+    public void create(TeacherCourse teacherCourse) {
 
     }
 

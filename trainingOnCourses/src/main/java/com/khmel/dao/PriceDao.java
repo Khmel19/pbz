@@ -14,7 +14,7 @@ public class PriceDao implements GenericDao<Price>{
     }
 
     @Override
-    public void create() {
+    public void create(Price price) {
 
     }
 

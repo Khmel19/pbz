@@ -15,7 +15,7 @@ public class BidDao implements  GenericDao<Bid>{
     }
     
     @Override
-    public void create() {
+    public void create(Bid bid) {
 
     }
 

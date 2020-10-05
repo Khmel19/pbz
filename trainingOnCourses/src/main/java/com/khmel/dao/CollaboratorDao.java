@@ -14,7 +14,7 @@ public class CollaboratorDao implements GenericDao<Collaborator> {
     }
 
     @Override
-    public void create() {
+    public void create(Collaborator collaborator) {
 
     }
 

@@ -14,7 +14,7 @@ public class CompanyDao implements GenericDao<Company>{
     }
 
     @Override
-    public void create() {
+    public void create(Company company) {
 
     }
 
