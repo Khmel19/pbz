@@ -1,10 +1,17 @@
 package com.khmel.dao;
 
+import com.khmel.db.DB;
 import com.khmel.model.Company;
 
 import java.util.List;
 
 public class CompanyDao implements GenericDao<Company>{
+    private DB bd;
+
+    public CompanyDao(DB bd) {
+        this.bd = bd;
+    }
+
     @Override
     public Company create() {
         return null;

@@ -1,10 +1,22 @@
 package com.khmel.dao;
 
+import com.khmel.db.DB;
 import com.khmel.model.Bid;
 
 import java.util.List;
 
-public class BidDao implements GenericDao<Bid>{
+public class BidDao implements  big<Bid>{
+private DB bd;
+
+    public BidDao(DB bd) {
+        this.bd = bd;
+    }
+
+
+    @Override
+    public Bid show() {
+        return null;
+    }
 
     @Override
     public Bid create() {

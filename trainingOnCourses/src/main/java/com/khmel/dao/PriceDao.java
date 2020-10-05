@@ -1,10 +1,18 @@
 package com.khmel.dao;
 
+import com.khmel.db.DB;
 import com.khmel.model.Price;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class PriceDao implements GenericDao<Price>{
+    private Connection connection;
+
+    public PriceDao(DB bd) {
+        this.connection = bd.getConnection();
+    }
+
     @Override
     public Price create() {
         return null;

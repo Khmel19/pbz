@@ -1,10 +1,17 @@
 package com.khmel.dao;
 
+import com.khmel.db.DB;
 import com.khmel.model.CompanyCollaborator;
 
 import java.util.List;
 
 public class CompanyCollaboratorDao implements GenericDao<CompanyCollaborator>{
+    private DB bd;
+
+    public CompanyCollaboratorDao(DB bd) {
+        this.bd = bd;
+    }
+
     @Override
     public CompanyCollaborator create() {
         return null;

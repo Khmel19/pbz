@@ -1,6 +1,8 @@
 package com.khmel;
 
+import com.khmel.dao.*;
 import com.khmel.db.DB;
+import com.khmel.model.Bid;
 
 import javax.swing.*;
 import java.io.BufferedInputStream;
@@ -23,7 +25,14 @@ public class Main {
         String password = (String) p.get("password");
         String nameDB =(String) p.get("nameDb");
         String timeZone =(String) p.get("timeZone");
-
+        System.out.println(Bid.class.getSimpleName());
          DB db = new DB(url,nameDB,timeZone,login,password);
+        BidDao dao = new BidDao(db);
+        big dao1 = (big) DaoFactory.createDao(BidDao.class.getSimpleName(),db);
+        GenericDao<Bid> lll = new BidDao(db);
+//
+
+
+
     }
 }

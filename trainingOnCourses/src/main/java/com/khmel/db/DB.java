@@ -24,23 +24,31 @@ public class DB {
         return connection;
     }
 
-    public void setConnection(Connection connection) {
-        this.connection = connection;
-    }
-
-    public Statement getStatement() {
-        return statement;
-    }
-
-    public void setStatement(Statement statement) {
-        this.statement = statement;
-    }
-
-    public ResultSet getResultSet() {
+    public ResultSet query(String sql) throws SQLException {//select
+        resultSet = statement.executeQuery(sql);
         return resultSet;
     }
 
-    public void setResultSet(ResultSet resultSet) {
-        this.resultSet = resultSet;
+    public void showTable(ResultSet rs) throws SQLException {
+        ResultSetMetaData rsmd = rs.getMetaData();
+
+        //выводим на консоль шапку таблицы
+        for(int i = 1; i <= rsmd.getColumnCount(); i++) {
+            System.out.print(rsmd.getColumnName(i) + "\t");
+        }
+        System.out.println();
+
+        //выводим на консоль саму таблицу
+        while(rs.next() == true) {
+            for(int i = 1; i <= rsmd.getColumnCount(); i++) {
+                System.out.print(rs.getString(i) + "\t");
+            }
+            System.out.println();
+        }
+
+    }
+
+    public Connection getCn() {
+        return connection;
     }
 }

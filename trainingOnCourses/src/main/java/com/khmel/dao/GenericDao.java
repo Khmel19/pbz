@@ -2,7 +2,7 @@ package com.khmel.dao;
 
 import java.util.List;
 
-public interface GenericDao<T> {
+public interface GenericDao<T>{
     public T create();
     public T persist(T object);
     public T getFromPK(int key);

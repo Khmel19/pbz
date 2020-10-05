@@ -1,10 +1,17 @@
 package com.khmel.dao;
 
+import com.khmel.db.DB;
 import com.khmel.model.TeacherCourse;
 
 import java.util.List;
 
 public class TeacherCourseDao implements GenericDao<TeacherCourse>{
+    private DB bd;
+
+    public TeacherCourseDao(DB bd) {
+        this.bd = bd;
+    }
+
     @Override
     public TeacherCourse create() {
         return null;
