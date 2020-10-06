@@ -10,8 +10,7 @@ public class Teacher {
 
     public Teacher() { }
 
-    public Teacher(int id, String name, String birthday, String gender, String education, String category) {
-        this.id = id;
+    public Teacher( String name, String birthday, String gender, String education, String category) {
         this.name = name;
         this.birthday = birthday;
         this.gender = gender;

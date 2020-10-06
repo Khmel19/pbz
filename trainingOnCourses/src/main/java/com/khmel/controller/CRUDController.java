@@ -3,6 +3,7 @@ package com.khmel.controller;
 import com.khmel.dao.GenericDao;
 import com.khmel.dao.TeacherDao;
 import com.khmel.db.DB;
+import com.khmel.model.Teacher;
 import com.khmel.view.Table;
 
 import java.sql.ResultSet;
@@ -29,5 +30,16 @@ public class CRUDController {
             e.printStackTrace();
         }
         return table;
+    }
+    public Table insertIntoTable(Teacher teacher) {
+        try {
+            dao.create(teacher);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        ResultSet resultSet = dao.getAll();
+        Table table = new Table(resultSet);
+        return table;
+
     }
 }

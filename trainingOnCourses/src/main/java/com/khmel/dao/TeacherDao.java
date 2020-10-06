@@ -14,24 +14,35 @@ public class TeacherDao implements GenericDao<Teacher> {
     }
 
     @Override
-    public void create(Teacher teacher) throws SQLException {
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO  " + teacher.getClass().getSimpleName().toLowerCase() + " VALUES(?,?,?,?,?)");
-        preparedStatement.setString(1, teacher.getName());
-        preparedStatement.setString(2, teacher.getBirthday());
-        preparedStatement.setString(3, teacher.getGender());
-        preparedStatement.setString(4, teacher.getEducation());
-        preparedStatement.setString(5, teacher.getCategory());
-        preparedStatement.execute();
+    public void create(Teacher teacher) {
+        this.connection = DB.getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement("INSERT INTO  " + teacher.getClass().getSimpleName().toLowerCase() +"(name,birthday,gender,education,category)"  + " VALUES(?,?,?,?,?)");
+            preparedStatement.setString(1, teacher.getName());
+            preparedStatement.setString(2, teacher.getBirthday());
+            preparedStatement.setString(3, teacher.getGender());
+            preparedStatement.setString(4, teacher.getEducation());
+            preparedStatement.setString(5, teacher.getCategory());
+            preparedStatement.execute();
+            connection.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
 
     }
 
     @Override
-    public Teacher getFromPK(int key) {
+    public Teacher getFromPK(int key)
+    {
+        this.connection = DB.getConnection();
         return null;
     }
 
     @Override
     public int update(Teacher teacher) {
+        this.connection = DB.getConnection();
         PreparedStatement ps = null;
         try {
             ps = connection.prepareStatement("UPDATE " +
@@ -50,19 +61,23 @@ public class TeacherDao implements GenericDao<Teacher> {
             }
 
             ps.execute();
+            connection.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+
         return 0;
     }
 
     @Override
     public int delete(Teacher object) {
+        this.connection = DB.getConnection();
         return 0;
     }
 
     @Override
     public ResultSet getAll() {
+        this.connection = DB.getConnection();
         String sqlSelect = "SELECT * FROM teacher";
         ResultSet resultSet = null;
         Statement statement = null;
