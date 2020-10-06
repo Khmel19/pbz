@@ -8,6 +8,7 @@ import java.util.List;
 
 public class TeacherDao implements GenericDao<Teacher> {
     private Connection connection;
+    //КОМЕНТ ДЛЯ ПАШИ
 
     public TeacherDao() {
         this.connection = DB.getConnection();
