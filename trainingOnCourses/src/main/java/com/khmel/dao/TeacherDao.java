@@ -37,7 +37,19 @@ public class TeacherDao implements GenericDao<Teacher> {
     public Teacher getFromPK(int key)
     {
         this.connection = DB.getConnection();
-        return null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet=null;
+        Teacher teacher=null;
+        try {
+            preparedStatement=connection.prepareStatement("SELECT * FROM "+Teacher.class.getSimpleName().toLowerCase()+" WHERE id="+key);
+            resultSet=preparedStatement.executeQuery();
+            teacher=new Teacher(resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
+            connection.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return teacher;
     }
 
     @Override
