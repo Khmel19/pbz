@@ -3,6 +3,7 @@ package com.khmel;
 import com.khmel.dao.*;
 import com.khmel.db.DB;
 import com.khmel.model.Bid;
+import com.khmel.view.MainFrame;
 
 import javax.swing.*;
 import java.io.BufferedInputStream;
@@ -18,6 +19,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException {
 
+        MainFrame frame = new MainFrame();
 
 
 

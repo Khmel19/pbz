@@ -5,6 +5,7 @@ import com.khmel.model.Bid;
 
 import java.io.FileNotFoundException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 public class BidDao implements  GenericDao<Bid>{
@@ -35,7 +36,7 @@ public class BidDao implements  GenericDao<Bid>{
     }
 
     @Override
-    public List<Bid> getAll() {
+    public ResultSet getAll() {
         return null;
     }
 }

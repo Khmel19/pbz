@@ -1,5 +1,6 @@
 package com.khmel.dao;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -8,5 +9,5 @@ public interface GenericDao<T>{
     public T getFromPK(int key);
     public int update(T object);
     public int delete(T object);
-    public List<T> getAll();
+    public ResultSet getAll();
 }

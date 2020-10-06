@@ -4,6 +4,7 @@ import com.khmel.db.DB;
 import com.khmel.model.CompanyCollaborator;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 public class CompanyCollaboratorDao implements GenericDao<CompanyCollaborator>{
@@ -34,7 +35,7 @@ public class CompanyCollaboratorDao implements GenericDao<CompanyCollaborator>{
     }
 
     @Override
-    public List<CompanyCollaborator> getAll() {
+    public ResultSet getAll() {
         return null;
     }
 }

@@ -4,6 +4,7 @@ import com.khmel.db.DB;
 import com.khmel.model.Price;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 public class PriceDao implements GenericDao<Price>{
@@ -34,7 +35,7 @@ public class PriceDao implements GenericDao<Price>{
     }
 
     @Override
-    public List<Price> getAll() {
+    public ResultSet getAll() {
         return null;
     }
 }

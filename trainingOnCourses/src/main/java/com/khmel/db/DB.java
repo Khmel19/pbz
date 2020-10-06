@@ -30,7 +30,7 @@ public class DB {
             nameDB = (String) p.get("nameDb");
             timeZone = (String) p.get("timeZone");
             connection = DriverManager.getConnection(url + nameDB + timeZone, login, password);
-
+            statement = connection.createStatement();
         } catch (SQLException | IOException ex){
             ex.printStackTrace();
         }
@@ -40,7 +40,10 @@ public class DB {
         resultSet = statement.executeQuery(sql);
         return resultSet;
     }
-
+    public static void closeConnectionAndStatement() throws SQLException {
+        connection.close();
+        statement.close();
+    }
     public static void showTable(ResultSet rs) throws SQLException {
         ResultSetMetaData rsmd = rs.getMetaData();
 

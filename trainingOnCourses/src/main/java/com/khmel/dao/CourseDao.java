@@ -4,6 +4,7 @@ import com.khmel.db.DB;
 import com.khmel.model.Course;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 public class CourseDao implements GenericDao<Course>{
@@ -34,7 +35,7 @@ public class CourseDao implements GenericDao<Course>{
     }
 
     @Override
-    public List<Course> getAll() {
+    public ResultSet getAll() {
         return null;
     }
 }

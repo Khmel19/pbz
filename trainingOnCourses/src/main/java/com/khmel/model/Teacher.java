@@ -4,16 +4,17 @@ public class Teacher {
     private int id;
     private String name;
     private String birthday;
+    private String gender;
     private String education;
     private String category;
 
     public Teacher() { }
 
-    public Teacher(int id, String name, String birthday,
-                   String education, String category) {
+    public Teacher(int id, String name, String birthday, String gender, String education, String category) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
+        this.gender = gender;
         this.education = education;
         this.category = category;
     }
@@ -40,6 +41,14 @@ public class Teacher {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getEducation() {

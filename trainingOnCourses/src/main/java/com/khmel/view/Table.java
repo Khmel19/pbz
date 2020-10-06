@@ -25,6 +25,7 @@ public class Table extends JTable {
                 for(int i = 1; i <= rsmd.getColumnCount(); i++) {
                     //array[i - 1] = rs.getString(i);
                     v.add(rs.getString(i));
+                    System.out.println(rs.getString(i));
                 }
                 //dtm.addRow(array);
                 dtm.addRow(v);
