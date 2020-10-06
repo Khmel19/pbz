@@ -70,8 +70,10 @@ public class MainFrame extends JFrame {
                 System.out.println("aaaaaaa");
 
                 Teacher teacher= new Teacher(name,birthday,gender,education,category);
+                panel.remove(scrollPane);
                 scrollPane = new JScrollPane(crudController.insertIntoTable(teacher));
                 panel.add(scrollPane);
+                panel.updateUI();
 
             }
         });
