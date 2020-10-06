@@ -1,6 +1,6 @@
 package com.khmel.view;
 
-import com.khmel.controller.TeacherController;
+import com.khmel.controller.CRUDController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +13,8 @@ public class MainFrame extends JFrame {
     public MainFrame(){
         super("MainFrame");
        // teacherTable.setLayout(null);
-        teacherTable = TeacherController.createTable();
+        CRUDController crudController=new CRUDController();
+        teacherTable = crudController.createTable();
         scrollPane = new JScrollPane(teacherTable);
     //    scrollPane.setPreferredSize(new Dimension(880, 100));
         scrollPane.setLocation(0,0);
