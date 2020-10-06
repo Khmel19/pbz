@@ -82,8 +82,18 @@ public class TeacherDao implements GenericDao<Teacher> {
     }
 
     @Override
-    public int delete(Teacher object) {
+    public int delete(Teacher teacher) {
         this.connection = DB.getConnection();
+        PreparedStatement ps = null;
+        try {
+            ps = connection.prepareStatement("DELETE FROM " +
+                    teacher.getClass().getSimpleName().toLowerCase() + ""
+                    + " WHERE id=" + teacher.getId());
+            ps.execute();
+            connection.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
         return 0;
     }
 
