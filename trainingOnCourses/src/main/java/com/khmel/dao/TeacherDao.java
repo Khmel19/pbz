@@ -18,7 +18,9 @@ public class TeacherDao implements GenericDao<Teacher> {
         this.connection = DB.getConnection();
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement = connection.prepareStatement("INSERT INTO  " + teacher.getClass().getSimpleName().toLowerCase() +"(name,birthday,gender,education,category)"  + " VALUES(?,?,?,?,?)");
+            preparedStatement = connection.prepareStatement("INSERT INTO  "
+                    + teacher.getClass().getSimpleName().toLowerCase() +
+                    "(name,birthday,gender,education,category)"  + " VALUES(?,?,?,?,?)");
             preparedStatement.setString(1, teacher.getName());
             preparedStatement.setString(2, teacher.getBirthday());
             preparedStatement.setString(3, teacher.getGender());
@@ -41,9 +43,11 @@ public class TeacherDao implements GenericDao<Teacher> {
         ResultSet resultSet=null;
         Teacher teacher=null;
         try {
-            preparedStatement=connection.prepareStatement("SELECT * FROM "+Teacher.class.getSimpleName().toLowerCase()+" WHERE id="+key);
+            preparedStatement=connection.prepareStatement("SELECT * FROM "+
+                    Teacher.class.getSimpleName().toLowerCase()+" WHERE id="+key);
             resultSet=preparedStatement.executeQuery();
-            teacher=new Teacher(resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
+            teacher=new Teacher(resultSet.getString(2),resultSet.getString(3),
+                    resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
             connection.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -110,21 +114,6 @@ public class TeacherDao implements GenericDao<Teacher> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-//        finally {
-//            try {
-//                statement.close();
-//               //connection.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//    }
-////            try {
-////                statement.close();
-////            } catch (SQLException e) {
-////                e.printStackTrace();
-////            }
-////        }
-
         return resultSet;
     }
 }
