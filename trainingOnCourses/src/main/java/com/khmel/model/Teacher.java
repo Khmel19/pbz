@@ -1,6 +1,6 @@
 package com.khmel.model;
 
-public class Teacher {
+public class Teacher extends Model{
     private int id;
     private String name;
     private String birthday;

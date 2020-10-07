@@ -33,7 +33,6 @@ public class TeacherDao implements GenericDao<Teacher> {
             throwables.printStackTrace();
         }
 
-
     }
 
     @Override
