@@ -10,7 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
-    private JPanel panel = new JPanel();
+    private JPanel tablePanel = new JPanel();
+    private JPanel buttonPanel = new JPanel();
     private JScrollPane scrollPane;
     private Table teacherTable;
     private JTextField nameTextField=new JTextField("name");
@@ -27,37 +28,48 @@ public class MainFrame extends JFrame {
         crudController.setDao(new TeacherDao());
         teacherTable = crudController.createTable();
         scrollPane = new JScrollPane(teacherTable);
-    //    scrollPane.setPreferredSize(new Dimension(880, 100));
+       // scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setVisible(true);
+        //scrollPane.setPreferredSize(new Dimension(880, 100));
+        teacherTable.setPreferredScrollableViewportSize(new Dimension(455,150));
         scrollPane.setLocation(0,0);
-        scrollPane.setSize(500,100);
+        //scrollPane.setSize(500,100);
        // panel.setLayout(new BorderLayout());;
-        panel.setSize(1000, 1000);
-        panel.setLocation(0, 0);
+        tablePanel.setSize(500, 180);
+        tablePanel.setLocation(0, 0);
+        buttonPanel.setSize(500, 100);
+        buttonPanel.setLocation(0, 400);
       //teacherTable.setLocation(0,0);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setSize(1500, 1500);
+        setSize(500, 500);
         //setResizable(false);
         setLayout(null);
         setLocationRelativeTo(null);
-        panel.add(scrollPane);
-        nameTextField.setLocation(600,400);
-        panel.add(nameTextField);
+        tablePanel.add(scrollPane);
+        nameTextField.setSize(40,20);
+        nameTextField.setLocation(10,10);
+        buttonPanel.add(nameTextField);
 
-        birthdayTextField.setLocation(200,200);
-        panel.add(birthdayTextField);
+        birthdayTextField.setSize(40,20);
+        birthdayTextField.setLocation(60,10);
+        buttonPanel.add(birthdayTextField);
 
-        genderTextField.setLocation(300,800);
-         panel.add(genderTextField);
+        genderTextField.setSize(40,20);
+        genderTextField.setLocation(110,10);
+        buttonPanel.add(genderTextField);
 
-         educationTextField.setLocation(500,900);
-         panel.add(educationTextField);
+        educationTextField.setSize(40,20);
+         educationTextField.setLocation(160,10);
+        buttonPanel.add(educationTextField);
 
-         categoryTextField.setLocation(300,700);
-         panel.add(categoryTextField);
+        categoryTextField.setSize(40,20);
+         categoryTextField.setLocation(210,10);
+        buttonPanel.add(categoryTextField);
 
-         addButton.setLocation(1000,1000);
-         panel.add(addButton);
+        addButton.setSize(40,20);
+         addButton.setLocation(260,10);
+        buttonPanel.add(addButton);
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -67,17 +79,21 @@ public class MainFrame extends JFrame {
                 String gender=genderTextField.getText();
                 String education=educationTextField.getText();
                 String category=categoryTextField.getText();
-                System.out.println("aaaaaaa");
 
                 Teacher teacher= new Teacher(name,birthday,gender,education,category);
-                panel.remove(scrollPane);
-                scrollPane = new JScrollPane(crudController.insertIntoTable(teacher));
-                panel.add(scrollPane);
-                panel.updateUI();
+                tablePanel.remove(scrollPane);
+                teacherTable = crudController.insertIntoTable(teacher);
+                teacherTable.setPreferredScrollableViewportSize(new Dimension(455,150));
 
+                scrollPane = new JScrollPane(teacherTable);
+
+                scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+                tablePanel.add(scrollPane);
+                tablePanel.updateUI();
             }
         });
-        add(panel);
+        add(tablePanel);
+        add(buttonPanel);
 
 
 

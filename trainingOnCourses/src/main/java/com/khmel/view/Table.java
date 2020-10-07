@@ -30,9 +30,9 @@ public class Table extends JTable {
                 //dtm.addRow(array);
                 dtm.addRow(v);
             }
-
+//AUTO_RESIZE_ALL_COLUMNS
             setModel(dtm);
-            setAutoResizeMode(AUTO_RESIZE_ALL_COLUMNS);
+            setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -40,4 +40,9 @@ public class Table extends JTable {
         }
 
     }
+//    @Override
+//    public Object getValueAt(int row, int column) {
+//        return super.getValueAt(row, column);
+//    }
+
 }
