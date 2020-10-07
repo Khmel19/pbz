@@ -5,6 +5,8 @@ import com.khmel.dao.TeacherDao;
 import com.khmel.model.Teacher;
 
 import javax.swing.*;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,20 +16,22 @@ public class MainFrame extends JFrame {
     private JPanel buttonPanel = new JPanel();
     private JScrollPane scrollPane;
     private Table teacherTable;
-    private JTextField nameTextField=new JTextField("name");
-    private JTextField birthdayTextField=new JTextField("birth");
-    private JTextField genderTextField=new JTextField("gender");
-    private JTextField educationTextField=new JTextField("education");
-    private JTextField categoryTextField=new JTextField("category");
-    private JButton addButton= new JButton("Add");
+    private JTextField nameTextField = new JTextField("name");
+    private JTextField birthdayTextField = new JTextField("birth");
+    private JTextField genderTextField = new JTextField("gender");
+    private JTextField educationTextField = new JTextField("education");
+    private JTextField categoryTextField = new JTextField("category");
+    private JButton addButton = new JButton("Add");
+    private JButton updateButton = new JButton("Update");
 
-    public MainFrame(){
+    public MainFrame() {
         super("MainFrame");
-       // teacherTable.setLayout(null);
-        CRUDController crudController=new CRUDController();
+        // teacherTable.setLayout(null);
+        CRUDController crudController = new CRUDController();
         crudController.setDao(new TeacherDao());
         teacherTable = crudController.createTable();
         scrollPane = new JScrollPane(teacherTable);
+
        // scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setVisible(true);
         //scrollPane.setPreferredSize(new Dimension(880, 100));
@@ -40,12 +44,14 @@ public class MainFrame extends JFrame {
         buttonPanel.setSize(500, 100);
         buttonPanel.setLocation(0, 400);
       //teacherTable.setLocation(0,0);
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setSize(500, 500);
         //setResizable(false);
         setLayout(null);
         setLocationRelativeTo(null);
+
         tablePanel.add(scrollPane);
         nameTextField.setSize(40,20);
         nameTextField.setLocation(10,10);
@@ -71,9 +77,11 @@ public class MainFrame extends JFrame {
          addButton.setLocation(260,10);
         buttonPanel.add(addButton);
 
+
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 String name=nameTextField.getText();
                 String birthday=birthdayTextField.getText();
                 String gender=genderTextField.getText();
@@ -94,8 +102,6 @@ public class MainFrame extends JFrame {
         });
         add(tablePanel);
         add(buttonPanel);
-
-
-
+        
     }
 }
