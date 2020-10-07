@@ -25,13 +25,13 @@ public class PriceDao implements GenericDao<Price>{
     }
 
     @Override
-    public int update(Price object) {
-        return 0;
+    public void update(Price object) {
+
     }
 
     @Override
-    public int delete(Price object) {
-        return 0;
+    public void delete(Price object) {
+
     }
 
     @Override

@@ -61,7 +61,6 @@ public class TeacherDao implements GenericDao<Teacher> {
     public void update(Teacher teacher) {
         this.connection = DB.getConnection();
         PreparedStatement ps = null;
-        System.out.println(teacher);
         try {
             ps = connection.prepareStatement("UPDATE teacher SET name=?, birthday=?, gender=?,education=?, category=? WHERE id=" + teacher.getId());
             try {

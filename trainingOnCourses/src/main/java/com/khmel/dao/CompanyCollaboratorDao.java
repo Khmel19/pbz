@@ -25,13 +25,13 @@ public class CompanyCollaboratorDao implements GenericDao<CompanyCollaborator>{
     }
 
     @Override
-    public int update(CompanyCollaborator object) {
-        return 0;
+    public void update(CompanyCollaborator object) {
+
     }
 
     @Override
-    public int delete(CompanyCollaborator object) {
-        return 0;
+    public void delete(CompanyCollaborator object) {
+
     }
 
     @Override

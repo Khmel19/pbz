@@ -25,13 +25,12 @@ public class CompanyDao implements GenericDao<Company>{
     }
 
     @Override
-    public int update(Company object) {
-        return 0;
+    public void update(Company object){
     }
 
     @Override
-    public int delete(Company object) {
-        return 0;
+    public void delete(Company object) {
+
     }
 
     @Override

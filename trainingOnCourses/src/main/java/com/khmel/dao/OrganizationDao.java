@@ -4,16 +4,13 @@ import com.khmel.db.DB;
 import com.khmel.model.Organization;
 import com.khmel.model.Teacher;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
-public class OrganizationDao implements GenericDao<Organization>{
+public class OrganizationDao implements GenericDao<Organization> {
     private Connection connection;
 
-    public OrganizationDao(){
+    public OrganizationDao() {
     }
 
     @Override
@@ -23,7 +20,7 @@ public class OrganizationDao implements GenericDao<Organization>{
         try {
             preparedStatement = connection.prepareStatement("INSERT INTO  "
                     + organization.getClass().getSimpleName().toLowerCase() +
-                    "(id_course,name,address,telephone,email)"  + " VALUES(?,?,?,?,?)");
+                    "(id_course,name,address,telephone,email)" + " VALUES(?,?,?,?,?)");
             preparedStatement.setInt(1, organization.getIdCourse());
             preparedStatement.setString(2, organization.getName());
             preparedStatement.setString(3, organization.getAddress());
@@ -42,14 +39,14 @@ public class OrganizationDao implements GenericDao<Organization>{
     public Organization getFromPK(int key) {
         this.connection = DB.getConnection();
         PreparedStatement preparedStatement = null;
-        ResultSet resultSet=null;
-        Organization organization=null;
+        ResultSet resultSet = null;
+        Organization organization = null;
         try {
-            preparedStatement=connection.prepareStatement("SELECT * FROM "+
-                    Organization.class.getSimpleName().toLowerCase()+" WHERE id="+key);
-            resultSet=preparedStatement.executeQuery();
-            organization =new Organization(resultSet.getInt(2),resultSet.getString(3),
-                    resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
+            preparedStatement = connection.prepareStatement("SELECT * FROM " +
+                    Organization.class.getSimpleName().toLowerCase() + " WHERE id=" + key);
+            resultSet = preparedStatement.executeQuery();
+            organization = new Organization(resultSet.getInt(2), resultSet.getString(3),
+                    resultSet.getString(4), resultSet.getString(5), resultSet.getString(6));
             preparedStatement.close();
             connection.close();
         } catch (SQLException throwable) {
@@ -105,6 +102,18 @@ public class OrganizationDao implements GenericDao<Organization>{
 
     @Override
     public ResultSet getAll() {
-        return null;
+        this.connection = DB.getConnection();
+        String sqlSelect = "SELECT * FROM organization";
+        ResultSet resultSet = null;
+        Statement statement = null;
+        try {
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sqlSelect);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
     }
 }
+

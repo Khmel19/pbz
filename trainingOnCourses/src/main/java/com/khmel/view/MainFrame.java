@@ -5,99 +5,97 @@ import com.khmel.dao.TeacherDao;
 import com.khmel.model.Teacher;
 
 import javax.swing.*;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainFrame extends JFrame {
     private JPanel tablePanel = new JPanel();
     private JPanel buttonPanel = new JPanel();
     private JScrollPane scrollPane;
     private Table teacherTable;
-    private JTextField nameTextField = new JTextField("name");
-    private JTextField birthdayTextField = new JTextField("birth");
-    private JTextField genderTextField = new JTextField("gender");
-    private JTextField educationTextField = new JTextField("education");
-    private JTextField categoryTextField = new JTextField("category");
+
+    private JLabel nameLabel = new JLabel("NAME: ");
+    private JLabel birthdayLabel = new JLabel("BIRTHDAY: ");
+    private JLabel genderLabel = new JLabel("GENDER: ");
+    private JLabel educationLabel = new JLabel("EDUCATION: ");
+    private JLabel categoryLabel = new JLabel("CATEGORY: ");
+
+    private JTextField nameTextField = new JTextField("");
+    private JTextField birthdayTextField = new JTextField("");
+    private JTextField genderTextField = new JTextField("");
+    private JTextField educationTextField = new JTextField("");
+    private JTextField categoryTextField = new JTextField("");
     private JButton addButton = new JButton("Add");
     private JButton updateButton = new JButton("Update");
 
     public MainFrame() {
         super("MainFrame");
-        // teacherTable.setLayout(null);
         CRUDController crudController = new CRUDController();
         crudController.setDao(new TeacherDao());
-        teacherTable = crudController.createTable();
-        scrollPane = new JScrollPane(teacherTable);
-
-       // scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setVisible(true);
-        //scrollPane.setPreferredSize(new Dimension(880, 100));
-        teacherTable.setPreferredScrollableViewportSize(new Dimension(455,150));
-        scrollPane.setLocation(0,0);
-        //scrollPane.setSize(500,100);
-       // panel.setLayout(new BorderLayout());;
-        tablePanel.setSize(500, 180);
-        tablePanel.setLocation(0, 0);
-        buttonPanel.setSize(500, 100);
-        buttonPanel.setLocation(0, 400);
-      //teacherTable.setLocation(0,0);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setSize(500, 500);
-        //setResizable(false);
+        setSize(600, 600);
+        setResizable(false);
         setLayout(null);
         setLocationRelativeTo(null);
 
+        teacherTable = crudController.createTable();
+
+        scrollPane = new JScrollPane(teacherTable);
+        scrollPane.setVisible(true);
+        scrollPane.setLocation(0, 0);
+        scrollPane.setSize(585, 200);
+
+        tablePanel.setSize(600, 200);
+        tablePanel.setLocation(0, 0);
+        tablePanel.setLayout(null);
         tablePanel.add(scrollPane);
-        nameTextField.setSize(40,20);
-        nameTextField.setLocation(10,10);
-        buttonPanel.add(nameTextField);
 
-        birthdayTextField.setSize(40,20);
-        birthdayTextField.setLocation(60,10);
-        buttonPanel.add(birthdayTextField);
+        buttonPanel.setSize(600, 399);
+        buttonPanel.setLocation(0, 201);
+        buttonPanel.setLayout(null);
 
-        genderTextField.setSize(40,20);
-        genderTextField.setLocation(110,10);
-        buttonPanel.add(genderTextField);
+        buttonPanel.add(updateComponent(nameLabel, 10, 10, 80, 20));
+        buttonPanel.add(updateComponent(birthdayLabel, 10, 60, 80, 20));
+        buttonPanel.add(updateComponent(genderLabel, 10, 110, 80, 20));
+        buttonPanel.add(updateComponent(educationLabel, 10, 160, 80, 20));
+        buttonPanel.add(updateComponent(categoryLabel, 10, 210, 80, 20));
+        buttonPanel.add(updateComponent(nameTextField,100,10,80,20));
+        buttonPanel.add(updateComponent(birthdayTextField,100,60,80,20));
+        buttonPanel.add(updateComponent(genderTextField, 100, 110,80,20));
+        buttonPanel.add(updateComponent(educationTextField,100,160,80,20));
+        buttonPanel.add(updateComponent(categoryTextField,100,210,80,20));
+        buttonPanel.add(updateComponent(addButton,10,240,170,40));
+        buttonPanel.add(updateComponent(updateButton,190,300,200,40));
 
-        educationTextField.setSize(40,20);
-         educationTextField.setLocation(160,10);
-        buttonPanel.add(educationTextField);
+        add(tablePanel);
+        add(buttonPanel);
+        setSize(601, 601);
 
-        categoryTextField.setSize(40,20);
-         categoryTextField.setLocation(210,10);
-        buttonPanel.add(categoryTextField);
-
-        addButton.setSize(40,20);
-         addButton.setLocation(260,10);
-        buttonPanel.add(addButton);
-
-        updateButton.setLocation(10,40);
-        updateButton.setSize(40,20);
-        buttonPanel.add(updateButton);
 
 
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String name=nameTextField.getText();
-                String birthday=birthdayTextField.getText();
-                String gender=genderTextField.getText();
-                String education=educationTextField.getText();
-                String category=categoryTextField.getText();
+                String name = nameTextField.getText();
+                String birthday = birthdayTextField.getText();
+                String gender = genderTextField.getText();
+                String education = educationTextField.getText();
+                String category = categoryTextField.getText();
 
-                Teacher teacher= new Teacher(name,birthday,gender,education,category);
+                Teacher teacher = new Teacher(name, birthday, gender, education, category);
                 tablePanel.remove(scrollPane);
                 teacherTable = crudController.insertIntoTable(teacher);
-                teacherTable.setPreferredScrollableViewportSize(new Dimension(455,150));
-
                 scrollPane = new JScrollPane(teacherTable);
+                scrollPane.setLocation(0, 0);
+                scrollPane.setSize(585, 200);
+                //teacherTable.setPreferredScrollableViewportSize(new Dimension(455,150));
+
 
                 scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
                 tablePanel.add(scrollPane);
@@ -108,23 +106,43 @@ public class MainFrame extends JFrame {
         updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                teacherTable.updateUI();
-                int id= Integer.parseInt((String) teacherTable.getValueAt(teacherTable.getSelectedRow(),0));
-                String name= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),1);
-                String birthday= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),2);
-                String gender= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),3);
-                String education= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),4);
-                String category= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),5);
-                Teacher teacher = new Teacher(name,birthday, gender, education, category);
-                teacher.setId(id);
-                teacherTable=crudController.updateTable(teacher);
+                //teacherTable.updateUI();
+                int id;
+                String name;
+                String birthday;
+                String gender;
+                String education;
+                String category;
+                Teacher teacher;
+                List<Teacher> teachers = new ArrayList();
+                teacherTable.repaint();
+                for (int i = 0; i < teacherTable.getRowCount(); i++) {
+                    int j = 0;
+                    id = Integer.parseInt((String) teacherTable.getValueAt(i, j++));
+                    name = (String) teacherTable.getValueAt(i, j++);
+                    birthday = (String) teacherTable.getValueAt(i, j++);
+                    gender = (String) teacherTable.getValueAt(i, j++);
+                    education = (String) teacherTable.getValueAt(i, j++);
+                    category = (String) teacherTable.getValueAt(i, j++);
+                    teachers.add(new Teacher(name, birthday, gender, education, category));
+                    teachers.get(i).setId(id);
+                }
+                for (Teacher teacher1 : teachers) {
+                    teacherTable = crudController.updateTable(teacher1);
+                }
+
 
             }
         });
 
-        
-        add(tablePanel);
-        add(buttonPanel);
-        
+
+    }
+
+    private JComponent updateComponent(JComponent component, int locationX, int locationY,
+                                       int sizeX, int sizeY) {
+        component.setSize(sizeX, sizeY);
+        component.setLocation(locationX, locationY);
+
+        return component;
     }
 }

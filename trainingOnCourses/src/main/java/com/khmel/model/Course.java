@@ -10,9 +10,8 @@ public class Course {
 
     public Course() { }
 
-    public Course(int id, int idPrice, String name,
-                  String type, int countOfDays, int countOfTrainees) {
-        this.id = id;
+    public Course(String name,
+                  String type, int countOfDays, int countOfTrainees,int idPrice) {
         this.idPrice = idPrice;
         this.name = name;
         this.type = type;

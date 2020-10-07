@@ -26,13 +26,13 @@ public class BidDao implements  GenericDao<Bid>{
     }
 
     @Override
-    public int update(Bid object) {
-        return 0;
+    public void update(Bid object) {
+
     }
 
     @Override
-    public int delete(Bid object) {
-        return 0;
+    public void delete(Bid object) {
+
     }
 
     @Override

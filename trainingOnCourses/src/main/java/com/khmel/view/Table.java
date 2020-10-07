@@ -14,7 +14,7 @@ public class Table extends JTable {
             ResultSetMetaData rsmd = rs.getMetaData();
 
             DefaultTableModel dtm = new DefaultTableModel();
-
+            dtm.fireTableDataChanged();
             for(int i = 1; i <= rsmd.getColumnCount(); i++) {
                 dtm.addColumn(rsmd.getColumnName(i));
             }
@@ -32,7 +32,7 @@ public class Table extends JTable {
             }
 //AUTO_RESIZE_ALL_COLUMNS
             setModel(dtm);
-            setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
