@@ -8,10 +8,9 @@ import java.util.List;
 
 public class TeacherDao implements GenericDao<Teacher> {
     private Connection connection;
-    //КОМЕНТ ДЛЯ ПАШИ
 
     public TeacherDao() {
-        this.connection = DB.getConnection();
+
     }
 
     @Override
@@ -28,6 +27,7 @@ public class TeacherDao implements GenericDao<Teacher> {
             preparedStatement.setString(4, teacher.getEducation());
             preparedStatement.setString(5, teacher.getCategory());
             preparedStatement.execute();
+            preparedStatement.close();
             connection.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -48,16 +48,17 @@ public class TeacherDao implements GenericDao<Teacher> {
             resultSet=preparedStatement.executeQuery();
             teacher=new Teacher(resultSet.getString(2),resultSet.getString(3),
                     resultSet.getString(4),resultSet.getString(5),resultSet.getString(6));
+            preparedStatement.close();
             connection.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         }
 
         return teacher;
     }
 
     @Override
-    public int update(Teacher teacher) {
+    public void update(Teacher teacher) {
         this.connection = DB.getConnection();
         PreparedStatement ps = null;
         try {
@@ -77,16 +78,16 @@ public class TeacherDao implements GenericDao<Teacher> {
             }
 
             ps.execute();
+            ps.close();
             connection.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
 
-        return 0;
     }
 
     @Override
-    public int delete(Teacher teacher) {
+    public void delete(Teacher teacher) {
         this.connection = DB.getConnection();
         PreparedStatement ps = null;
         try {
@@ -94,11 +95,11 @@ public class TeacherDao implements GenericDao<Teacher> {
                     teacher.getClass().getSimpleName().toLowerCase() + ""
                     + " WHERE id=" + teacher.getId());
             ps.execute();
+            ps.close();
             connection.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        return 0;
     }
 
     @Override
