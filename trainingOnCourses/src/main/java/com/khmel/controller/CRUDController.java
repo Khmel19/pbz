@@ -42,4 +42,10 @@ public class CRUDController {
         Table table = new Table(resultSet);
         return table;
     }
+    public Table updateTable(Model model){
+        dao.update(model);
+        ResultSet resultSet=dao.getAll();
+        Table table=new Table(resultSet);
+        return table;
+    }
 }

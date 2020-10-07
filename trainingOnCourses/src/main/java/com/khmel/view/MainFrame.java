@@ -77,6 +77,10 @@ public class MainFrame extends JFrame {
          addButton.setLocation(260,10);
         buttonPanel.add(addButton);
 
+        updateButton.setLocation(10,40);
+        updateButton.setSize(40,20);
+        buttonPanel.add(updateButton);
+
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -100,6 +104,25 @@ public class MainFrame extends JFrame {
                 tablePanel.updateUI();
             }
         });
+
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                teacherTable.updateUI();
+                int id= Integer.parseInt((String) teacherTable.getValueAt(teacherTable.getSelectedRow(),0));
+                String name= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),1);
+                String birthday= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),2);
+                String gender= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),3);
+                String education= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),4);
+                String category= (String) teacherTable.getValueAt(teacherTable.getSelectedRow(),5);
+                Teacher teacher = new Teacher(name,birthday, gender, education, category);
+                teacher.setId(id);
+                teacherTable=crudController.updateTable(teacher);
+
+            }
+        });
+
+        
         add(tablePanel);
         add(buttonPanel);
         

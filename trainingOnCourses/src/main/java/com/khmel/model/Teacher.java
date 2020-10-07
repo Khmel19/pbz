@@ -65,4 +65,16 @@ public class Teacher extends Model{
     public void setCategory(String category) {
         this.category = category;
     }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", gender='" + gender + '\'' +
+                ", education='" + education + '\'' +
+                ", category='" + category + '\'' +
+                '}';
+    }
 }

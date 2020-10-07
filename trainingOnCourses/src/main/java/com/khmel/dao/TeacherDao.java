@@ -60,11 +60,9 @@ public class TeacherDao implements GenericDao<Teacher> {
     public int update(Teacher teacher) {
         this.connection = DB.getConnection();
         PreparedStatement ps = null;
+        System.out.println(teacher);
         try {
-            ps = connection.prepareStatement("UPDATE " +
-                    teacher.getClass().getSimpleName().toLowerCase() + ""
-                    + " SET name=?, birthday=?, gender=?" +
-                    " education=?, category=? WHERE id=" + teacher.getId());
+            ps = connection.prepareStatement("UPDATE teacher SET name=?, birthday=?, gender=?,education=?, category=? WHERE id=" + teacher.getId());
             try {
 
                 ps.setString(1, teacher.getName());
@@ -77,6 +75,7 @@ public class TeacherDao implements GenericDao<Teacher> {
             }
 
             ps.execute();
+            ps.close();
             connection.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
