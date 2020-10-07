@@ -9,7 +9,7 @@ public class Company {
 
     public Company() { }
 
-    public Company(int id, String name, String telephone,
+    public Company( String name, String telephone,
                    String email, String address) {
         this.id = id;
         this.name = name;
