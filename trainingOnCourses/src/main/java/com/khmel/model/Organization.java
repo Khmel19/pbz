@@ -10,9 +10,8 @@ public class Organization {
 
     public Organization() { }
 
-    public Organization(int id, int idCourse, String name,
+    public Organization(int idCourse, String name,
                         String address, String telephone, String email) {
-        this.id = id;
         this.idCourse = idCourse;
         this.name = name;
         this.address = address;
