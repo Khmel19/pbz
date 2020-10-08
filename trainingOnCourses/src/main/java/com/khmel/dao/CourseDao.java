@@ -44,8 +44,9 @@ public class CourseDao implements GenericDao<Course> {
         Course course = null;
         try {
             preparedStatement = connection.prepareStatement("SELECT * FROM " +
-                    Teacher.class.getSimpleName().toLowerCase() + " WHERE id=" + key);
+                    Course.class.getSimpleName().toLowerCase() + " WHERE id=" + key);
             resultSet = preparedStatement.executeQuery();
+            resultSet.next();
             course = new Course(resultSet.getString(2), resultSet.getString(3),
                     resultSet.getInt(4), resultSet.getInt(5), resultSet.getInt(6));
             preparedStatement.close();
@@ -99,6 +100,8 @@ public class CourseDao implements GenericDao<Course> {
         }
     }
 
+    //SELECT course.id, name, type, count_of_days, count_of_trainees, price.price\n" +
+    //                "FROM course JOIN price ON course.id_price = price.id
     @Override
     public ResultSet getAll() {
         this.connection = DB.getConnection();

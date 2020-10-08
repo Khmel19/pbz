@@ -14,7 +14,7 @@ public class TeacherFrame extends JFrame {
     private CRUDController crudController;
 
     private JPanel tablePanel = new JPanel();
-    private JPanel buttonPanel = new JPanel();
+    private JPanel componentPanel = new JPanel();
     private JScrollPane scrollPane;
     private Table teacherTable;
 
@@ -36,6 +36,7 @@ public class TeacherFrame extends JFrame {
     private JButton updateButton = new JButton("Update");
     private JButton getButton = new JButton("Get");
     private JButton deleteButton = new JButton("Delete");
+    private JButton backButton = new JButton("Back");
 
     public TeacherFrame() {
         super("TeacherFrame");
@@ -47,7 +48,7 @@ public class TeacherFrame extends JFrame {
         setSize(600, 550);
         setLayout(null);
         setLocationRelativeTo(null);
-
+        setResizable(false);
         teacherTable = crudController.createTable();
 
         scrollPane = new JScrollPane(teacherTable);
@@ -60,30 +61,30 @@ public class TeacherFrame extends JFrame {
         tablePanel.setLayout(null);
         tablePanel.add(scrollPane);
 
-        buttonPanel.setSize(600, 349);
-        buttonPanel.setLocation(0, 201);
-        buttonPanel.setLayout(null);
+        componentPanel.setSize(600, 349);
+        componentPanel.setLocation(0, 201);
+        componentPanel.setLayout(null);
 
-        buttonPanel.add(updateComponent(nameLabel, 10, 10, 80, 20));
-        buttonPanel.add(updateComponent(birthdayLabel, 10, 60, 80, 20));
-        buttonPanel.add(updateComponent(genderLabel, 10, 110, 80, 20));
-        buttonPanel.add(updateComponent(educationLabel, 10, 160, 80, 20));
-        buttonPanel.add(updateComponent(categoryLabel, 10, 210, 80, 20));
-        buttonPanel.add(updateComponent(nameTextField, 100, 10, 80, 20));
-        buttonPanel.add(updateComponent(birthdayTextField, 100, 60, 80, 20));
-        buttonPanel.add(updateComponent(genderTextField, 100, 110, 80, 20));
-        buttonPanel.add(updateComponent(educationTextField, 100, 160, 80, 20));
-        buttonPanel.add(updateComponent(categoryTextField, 100, 210, 80, 20));
-        buttonPanel.add(updateComponent(addButton, 10, 260, 170, 40));
-        buttonPanel.add(updateComponent(updateButton, 190, 260, 170, 40));
-        buttonPanel.add(updateComponent(getIdLabel, 230, 60, 30, 20));
-        buttonPanel.add(updateComponent(getIdTextField, 260, 60, 80, 20));
-        buttonPanel.add(updateComponent(getButton, 230, 90, 110, 40));
-        buttonPanel.add(updateComponent(deleteButton, 370, 260, 170, 40));
-
+        componentPanel.add(updateComponent(nameLabel, 10, 10, 80, 20));
+        componentPanel.add(updateComponent(birthdayLabel, 10, 60, 80, 20));
+        componentPanel.add(updateComponent(genderLabel, 10, 110, 80, 20));
+        componentPanel.add(updateComponent(educationLabel, 10, 160, 80, 20));
+        componentPanel.add(updateComponent(categoryLabel, 10, 210, 80, 20));
+        componentPanel.add(updateComponent(nameTextField, 100, 10, 80, 20));
+        componentPanel.add(updateComponent(birthdayTextField, 100, 60, 80, 20));
+        componentPanel.add(updateComponent(genderTextField, 100, 110, 80, 20));
+        componentPanel.add(updateComponent(educationTextField, 100, 160, 80, 20));
+        componentPanel.add(updateComponent(categoryTextField, 100, 210, 80, 20));
+        componentPanel.add(updateComponent(addButton, 10, 260, 170, 40));
+        componentPanel.add(updateComponent(updateButton, 190, 260, 170, 40));
+        componentPanel.add(updateComponent(getIdLabel, 230, 60, 30, 20));
+        componentPanel.add(updateComponent(getIdTextField, 260, 60, 80, 20));
+        componentPanel.add(updateComponent(getButton, 230, 90, 110, 40));
+        componentPanel.add(updateComponent(deleteButton, 370, 260, 170, 40));
+        componentPanel.add(updateComponent(backButton,370,200,170,40));
         add(tablePanel);
-        add(buttonPanel);
-        setSize(601, 551);
+        add(componentPanel);
+       // setSize(601, 551);
 
 
         addButton.addActionListener(new ActionListener() {
@@ -131,8 +132,8 @@ public class TeacherFrame extends JFrame {
                             (String) teacherTable.getValueAt(i, j++)));
                     teachers.get(i).setId(id);
                 }
-                for (Teacher teacher1 : teachers) {
-                    teacherTable = crudController.updateTable(teacher1);
+                for (Teacher teacher : teachers) {
+                    teacherTable = crudController.updateTable(teacher);
                 }
             }
         });
@@ -150,13 +151,13 @@ public class TeacherFrame extends JFrame {
                     }
                     if (exist) {
                         Teacher teacher = (Teacher) crudController.getFromTable(id);
-                        JOptionPane.showMessageDialog(buttonPanel, teacher, "Teacher", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(componentPanel, teacher, "Teacher", JOptionPane.INFORMATION_MESSAGE);
                     } else {
-                        JOptionPane.showMessageDialog(buttonPanel, "Doesn't exists", "Teacher", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(componentPanel, "Doesn't exists", "Teacher", JOptionPane.INFORMATION_MESSAGE);
                     }
 
                 } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(buttonPanel, "Bad value", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(componentPanel, "Bad value", "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 getIdTextField.setText("");
             }
@@ -182,6 +183,14 @@ public class TeacherFrame extends JFrame {
                 scrollPane.setSize(585, 200);
                 tablePanel.add(scrollPane);
                 tablePanel.updateUI();
+            }
+        });
+
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
+                new MainFrame();
             }
         });
     }

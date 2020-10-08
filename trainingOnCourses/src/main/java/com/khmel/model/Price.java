@@ -8,7 +8,6 @@ public class Price {
     public Price() { }
 
     public Price( int price, String date) {
-        this.id = id;
         this.price = price;
         this.date = date;
     }

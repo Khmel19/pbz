@@ -1,5 +1,6 @@
 package com.khmel;
 
+import com.khmel.view.MainFrame;
 import com.khmel.view.TeacherFrame;
 
 import java.io.IOException;
@@ -9,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, SQLException {
 
-        TeacherFrame frame = new TeacherFrame();
+        new MainFrame();
 
 
 
