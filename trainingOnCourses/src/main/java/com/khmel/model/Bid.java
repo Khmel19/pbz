@@ -9,7 +9,7 @@ public class Bid {
 
     public Bid() { }
 
-    public Bid(int id, int idCompany, int idCourse, int term,
+    public Bid( int idCompany, int idCourse, int term,
                int countOfTrainees) {
         this.id = id;
         this.idCompany = idCompany;

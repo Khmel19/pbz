@@ -7,7 +7,7 @@ public class Price {
 
     public Price() { }
 
-    public Price(int id, int price, String date) {
+    public Price( int price, String date) {
         this.id = id;
         this.price = price;
         this.date = date;
