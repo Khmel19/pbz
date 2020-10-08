@@ -8,7 +8,7 @@ import com.khmel.model.Teacher;
 import java.sql.*;
 import java.util.List;
 
-public class CompanyDao implements GenericDao<Company>{
+public class CompanyDao implements GenericDao<Company> {
     private Connection connection;
 
     public CompanyDao() {
@@ -21,13 +21,13 @@ public class CompanyDao implements GenericDao<Company>{
         PreparedStatement preparedStatement = null;
 
         try {
-            preparedStatement=connection.prepareStatement("INSERT INTO  "
+            preparedStatement = connection.prepareStatement("INSERT INTO  "
                     + company.getClass().getSimpleName().toLowerCase() +
                     "(name,telephone,email,address)" + " VALUES(?,?,?,?)");
-            preparedStatement.setString(1,company.getName());
-            preparedStatement.setString(2,company.getTelephone());
-            preparedStatement.setString(3,company.getEmail());
-            preparedStatement.setString(4,company.getAddress());
+            preparedStatement.setString(1, company.getName());
+            preparedStatement.setString(2, company.getTelephone());
+            preparedStatement.setString(3, company.getEmail());
+            preparedStatement.setString(4, company.getAddress());
 
             preparedStatement.execute();
             preparedStatement.close();
@@ -44,11 +44,12 @@ public class CompanyDao implements GenericDao<Company>{
         ResultSet resultSet = null;
         Company company = null;
         try {
-            preparedStatement=connection.prepareStatement("SELECT * FROM " +
+            preparedStatement = connection.prepareStatement("SELECT * FROM " +
                     Company.class.getSimpleName().toLowerCase() + " WHERE id=" + key);
-            resultSet=preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
-            company=new Company(resultSet.getString(2),resultSet.getString(3),resultSet.getString(4),resultSet.getString(5));
+            resultSet.next();
+            company = new Company(resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5));
 
             preparedStatement.close();
             connection.close();
@@ -59,16 +60,16 @@ public class CompanyDao implements GenericDao<Company>{
     }
 
     @Override
-    public void update(Company company){
+    public void update(Company company) {
         this.connection = DB.getConnection();
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement=connection.prepareStatement("UPDATE company SET name=?, telephone=?," +
-                                        " email=?,address=? WHERE id=" + company.getId());
-            preparedStatement.setString(1,company.getName());
-            preparedStatement.setString(2,company.getTelephone());
-            preparedStatement.setString(3,company.getEmail());
-            preparedStatement.setString(4,company.getAddress());
+            preparedStatement = connection.prepareStatement("UPDATE company SET name=?, telephone=?," +
+                    " email=?,address=? WHERE id=" + company.getId());
+            preparedStatement.setString(1, company.getName());
+            preparedStatement.setString(2, company.getTelephone());
+            preparedStatement.setString(3, company.getEmail());
+            preparedStatement.setString(4, company.getAddress());
 
             preparedStatement.execute();
             preparedStatement.close();
@@ -83,8 +84,8 @@ public class CompanyDao implements GenericDao<Company>{
         this.connection = DB.getConnection();
         PreparedStatement preparedStatement = null;
         try {
-            preparedStatement=connection.prepareStatement("DELETE FROM " +
-                    company.getClass().getSimpleName().toLowerCase() + " WHERE id="+ company.getId());
+            preparedStatement = connection.prepareStatement("DELETE FROM " +
+                    company.getClass().getSimpleName().toLowerCase() + " WHERE id=" + company.getId());
             preparedStatement.execute();
             preparedStatement.close();
             connection.close();
@@ -100,8 +101,8 @@ public class CompanyDao implements GenericDao<Company>{
         ResultSet resultSet = null;
         Statement statement = null;
         try {
-            statement=connection.createStatement();
-            resultSet=statement.executeQuery(sqlSelect);
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sqlSelect);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

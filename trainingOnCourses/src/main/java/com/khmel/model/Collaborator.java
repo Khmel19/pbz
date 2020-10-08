@@ -8,7 +8,7 @@ public class Collaborator {
 
     public Collaborator() { }
 
-    public Collaborator(int id, int idCourse, String name, String position) {
+    public Collaborator( int idCourse, String name, String position) {
         this.id = id;
         this.idCourse = idCourse;
         this.name = name;
