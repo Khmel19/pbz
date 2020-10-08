@@ -48,4 +48,11 @@ public class CRUDController {
         Table table=new Table(resultSet);
         return table;
     }
+    public void deleteFromTable(Model model){
+        dao.delete(model);
+    }
+
+    public Model getFromTable(int id){
+        return (Model)dao.getFromPK(id);
+    }
 }

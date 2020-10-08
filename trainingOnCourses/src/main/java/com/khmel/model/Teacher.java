@@ -68,13 +68,10 @@ public class Teacher extends Model{
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", gender='" + gender + '\'' +
-                ", education='" + education + '\'' +
-                ", category='" + category + '\'' +
-                '}';
+        return "Фамилия: "+name + "\n" +
+                "Др: "+ birthday + "\n" +
+                "Пол: "+ gender + "\n"+
+                "Образование: "+education + "\n" +
+                "Категория: "+category;
     }
 }
