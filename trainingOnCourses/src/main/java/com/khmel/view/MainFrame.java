@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public class MainFrame extends JFrame {
     private JButton teacherButton = new JButton("Teachers");
     private JButton courseButton = new JButton("Courses");
+    private JButton organizationButton = new JButton("Organizations");
     private JPanel buttonPanel = new JPanel();
 
     public MainFrame() throws HeadlessException {
@@ -23,6 +24,8 @@ public class MainFrame extends JFrame {
         buttonPanel.setSize(600, 550);
         buttonPanel.add(updateComponent(teacherButton,10,100,100,50));
         buttonPanel.add(updateComponent(courseButton,120,100,100,50));
+        buttonPanel.add(updateComponent(organizationButton,230,100,100,50));
+
         //setSize(601,551);
         add(buttonPanel);
         teacherButton.addActionListener(new ActionListener() {
@@ -37,6 +40,13 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 dispose();
                 new CourseFrame();
+            }
+        });
+        organizationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new OrganizationFrame();
             }
         });
     }

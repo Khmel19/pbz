@@ -1,6 +1,6 @@
 package com.khmel.model;
 
-public class Organization {
+public class Organization extends Model{
     private int id;
     private int idCourse;
     private String name;

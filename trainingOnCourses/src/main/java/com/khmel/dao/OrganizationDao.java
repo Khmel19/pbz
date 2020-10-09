@@ -45,6 +45,8 @@ public class OrganizationDao implements GenericDao<Organization> {
             preparedStatement = connection.prepareStatement("SELECT * FROM " +
                     Organization.class.getSimpleName().toLowerCase() + " WHERE id=" + key);
             resultSet = preparedStatement.executeQuery();
+
+            resultSet.next();
             organization = new Organization(resultSet.getInt(2), resultSet.getString(3),
                     resultSet.getString(4), resultSet.getString(5), resultSet.getString(6));
             preparedStatement.close();
