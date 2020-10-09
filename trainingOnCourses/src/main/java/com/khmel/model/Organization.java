@@ -66,4 +66,16 @@ public class Organization extends Model{
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "Organization{" +
+                "id=" + id +
+                ", idCourse=" + idCourse +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

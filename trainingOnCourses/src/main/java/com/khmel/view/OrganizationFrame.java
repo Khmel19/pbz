@@ -70,7 +70,7 @@ public class OrganizationFrame extends JFrame {
 
         componentPanel.add(updateComponent(nameLabel, 10, 10, 80, 20));
         componentPanel.add(updateComponent(addressLabel, 10, 60, 80, 20));
-        componentPanel.add(updateComponent(telephoneLabel, 10, 110, 80, 20));
+        componentPanel.add(updateComponent(telephoneLabel, 10, 110, 100, 20));
         componentPanel.add(updateComponent(emailLabel, 10, 160, 80, 20));
         componentPanel.add(updateComponent(idCourseLabel, 10, 210, 80, 20));
         componentPanel.add(updateComponent(nameTextField, 100, 10, 80, 20));
@@ -155,9 +155,9 @@ public class OrganizationFrame extends JFrame {
                     }
                     if (exist) {
                         Organization organization = (Organization) crudController.getFromTable(id);
-                        JOptionPane.showMessageDialog(componentPanel, organization, "Teacher", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(componentPanel, organization, "Organization", JOptionPane.INFORMATION_MESSAGE);
                     } else {
-                        JOptionPane.showMessageDialog(componentPanel, "Doesn't exists", "Teacher", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(componentPanel, "Doesn't exists", "Organization", JOptionPane.INFORMATION_MESSAGE);
                     }
 
                 } catch (NumberFormatException exception) {

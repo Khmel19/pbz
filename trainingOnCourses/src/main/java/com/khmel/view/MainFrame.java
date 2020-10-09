@@ -22,9 +22,9 @@ public class MainFrame extends JFrame {
         buttonPanel.setLayout(null);
         buttonPanel.setLocation(0, 0);
         buttonPanel.setSize(600, 550);
-        buttonPanel.add(updateComponent(teacherButton,10,100,100,50));
-        buttonPanel.add(updateComponent(courseButton,120,100,100,50));
-        buttonPanel.add(updateComponent(organizationButton,230,100,100,50));
+        buttonPanel.add(updateComponent(teacherButton,10,100,120,50));
+        buttonPanel.add(updateComponent(courseButton,140,100,120,50));
+        buttonPanel.add(updateComponent(organizationButton,270,100,120,50));
 
         //setSize(601,551);
         add(buttonPanel);
