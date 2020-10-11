@@ -10,7 +10,7 @@ import java.util.List;
 public class BidDao implements  GenericDao<Bid>{
     private Connection connection;
 
-    public BidDao() throws FileNotFoundException {
+    public BidDao()  {
         this.connection = DB.getConnection();
     }
     

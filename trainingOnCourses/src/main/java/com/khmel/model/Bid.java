@@ -1,6 +1,6 @@
 package com.khmel.model;
 
-public class Bid {
+public class Bid extends Model{
     private int id;
     private int idCompany;
     private int idCourse;
@@ -56,5 +56,15 @@ public class Bid {
 
     public void setCountOfTrainees(int countOfTrainees) {
         this.countOfTrainees = countOfTrainees;
+    }
+
+    @Override
+    public String toString() {
+        return "Bid\n" +
+                " id=" + id +
+                ",\n idCompany=" + idCompany +
+                ",\n idCourse=" + idCourse +
+                ",\n term=" + term +
+                ",\n countOfTrainees=" + countOfTrainees;
     }
 }
