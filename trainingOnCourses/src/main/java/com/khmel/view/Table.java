@@ -8,6 +8,10 @@ import java.sql.SQLException;
 import java.util.Vector;
 
 public class Table extends JTable {
+
+    public Table() {
+    }
+
     public Table(ResultSet rs) {
 
         try {

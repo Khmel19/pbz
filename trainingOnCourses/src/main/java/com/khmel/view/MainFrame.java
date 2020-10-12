@@ -10,6 +10,7 @@ public class MainFrame extends JFrame {
     private JButton courseButton = new JButton("Courses");
     private JButton organizationButton = new JButton("Organizations");
     private JButton bidButton = new JButton("Bids");
+    private JButton priceListButton = new JButton("PriceList");
     private JPanel buttonPanel = new JPanel();
 
     public MainFrame() throws HeadlessException {
@@ -27,7 +28,7 @@ public class MainFrame extends JFrame {
         buttonPanel.add(updateComponent(courseButton,140,100,120,50));
         buttonPanel.add(updateComponent(organizationButton,270,100,120,50));
         buttonPanel.add(updateComponent(bidButton,400,100,120,50));
-
+        buttonPanel.add(updateComponent(priceListButton,10,160,120,50));
         //setSize(601,551);
         add(buttonPanel);
         teacherButton.addActionListener(new ActionListener() {
@@ -56,6 +57,13 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 new BidFrame();
+            }
+        });
+        priceListButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
+                new PriceListFrame();
             }
         });
     }
