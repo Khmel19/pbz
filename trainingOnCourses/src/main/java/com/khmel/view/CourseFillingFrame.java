@@ -22,7 +22,7 @@ public class CourseFillingFrame extends JFrame {
     private JScrollPane scrollPane;
     private Table courseFillingTable;
 
-    CourseFillingFrame(){
+    CourseFillingFrame() {
         super("CourseFillingFrame");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
@@ -58,16 +58,16 @@ public class CourseFillingFrame extends JFrame {
         getButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name=nameTextField.getText();
-                int term=Integer.parseInt(termTextField.getText());
-                if (name.equals("")||term==0) {
+                String name = nameTextField.getText();
+                int term = Integer.parseInt(termTextField.getText());
+                if (name.equals("") || term == 0) {
                     JOptionPane.showMessageDialog(componentPanel, "Input value", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                String sql="SELECT course.name, teacher_course.start_date,teacher_course.end_date,course.count_of_trainees AS Мест,\n" +
+                String sql = "SELECT course.name, teacher_course.start_date,teacher_course.end_date,course.count_of_trainees AS Мест,\n" +
                         "bid.count_of_trainees AS Набрано FROM course \n" +
                         "JOIN teacher_course ON teacher_course.id_course=course.id\n" +
                         "JOIN bid ON bid.id_course=course.id\n" +
-                        "WHERE course.name='"+name+"' AND course.count_of_days="+term;
+                        "WHERE course.name='" + name + "' AND course.count_of_days=" + term;
                 tablePanel.remove(scrollPane);
                 try {
                     DB.getConnection();
@@ -95,6 +95,7 @@ public class CourseFillingFrame extends JFrame {
         });
 
     }
+
     private JComponent updateComponent(JComponent component, int locationX, int locationY,
                                        int sizeX, int sizeY) {
         component.setSize(sizeX, sizeY);

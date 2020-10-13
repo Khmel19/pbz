@@ -69,13 +69,12 @@ public class Organization extends Model{
 
     @Override
     public String toString() {
-        return "Organization{" +
-                "id=" + id +
-                ", idCourse=" + idCourse +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Organization\n" +
+                "id = " + id +
+                "\nidCourse = " + idCourse +
+                "\nname = " + name +
+                "\naddress = " + address +
+                "\ntelephone = " + telephone +
+                "\nemail = " + email;
     }
 }

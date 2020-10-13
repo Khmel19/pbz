@@ -69,13 +69,12 @@ public class Course extends Model{
 
     @Override
     public String toString() {
-        return "Course{" +
-                "id=" + id +
-                ", idPrice=" + idPrice +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", countOfDays=" + countOfDays +
-                ", countOfTrainees=" + countOfTrainees +
-                '}';
+        return "Course" +
+                "\nid = " + id +
+                "\nidPrice = " + idPrice +
+                "\nname = " + name +
+                "\ntype = " + type +
+                "\ncountOfDays = " + countOfDays +
+                "\ncountOfTrainees = " + countOfTrainees;
     }
 }

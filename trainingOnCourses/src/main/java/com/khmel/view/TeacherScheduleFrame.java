@@ -22,7 +22,7 @@ public class TeacherScheduleFrame extends JFrame {
     private JScrollPane scrollPane;
     private Table teacherScheduleTable;
 
-    TeacherScheduleFrame(){
+    TeacherScheduleFrame() {
         super("TeacherScheduleFrame");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
@@ -58,15 +58,15 @@ public class TeacherScheduleFrame extends JFrame {
         getButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name=nameTextField.getText();
-                int term=Integer.parseInt(termTextField.getText());
-                if (name.equals("")||term==0) {
+                String name = nameTextField.getText();
+                int term = Integer.parseInt(termTextField.getText());
+                if (name.equals("") || term == 0) {
                     JOptionPane.showMessageDialog(componentPanel, "Input value", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                String sql ="SELECT teacher.name, course.name, teacher_course.start_date, teacher_course.end_date FROM teacher_course \n" +
+                String sql = "SELECT teacher.name, course.name, teacher_course.start_date, teacher_course.end_date FROM teacher_course \n" +
                         "JOIN teacher ON teacher.id=teacher_course.id_teacher \n" +
                         "JOIN course ON course.id=teacher_course.id_course\n" +
-                        "WHERE teacher.name='"+name +"' AND course.count_of_days="+term;
+                        "WHERE teacher.name='" + name + "' AND course.count_of_days=" + term;
 
                 tablePanel.remove(scrollPane);
                 try {
@@ -95,6 +95,7 @@ public class TeacherScheduleFrame extends JFrame {
             }
         });
     }
+
     private JComponent updateComponent(JComponent component, int locationX, int locationY,
                                        int sizeX, int sizeY) {
         component.setSize(sizeX, sizeY);

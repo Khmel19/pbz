@@ -65,19 +65,19 @@ public class BidFrame extends JFrame {
         componentPanel.setLocation(0, 201);
         componentPanel.setLayout(null);
 
-        componentPanel.add(updateComponent(idCompanyLabel, 10, 10, 80, 20));
+        componentPanel.add(updateComponent(idCompanyLabel, 10, 10, 90, 20));
         componentPanel.add(updateComponent(idCourseLabel, 10, 60, 80, 20));
         componentPanel.add(updateComponent(termLabel, 10, 110, 80, 20));
-        componentPanel.add(updateComponent(countOfTraineesLabel, 10, 160, 80, 20));
-        componentPanel.add(updateComponent(idCompanyTextField, 100, 10, 80, 20));
-        componentPanel.add(updateComponent(idCourseTextField, 100, 60, 80, 20));
-        componentPanel.add(updateComponent(termTextField, 100, 110, 80, 20));
-        componentPanel.add(updateComponent(countOfTraineesTextField, 100, 160, 80, 20));
+        componentPanel.add(updateComponent(countOfTraineesLabel, 10, 160, 140, 20));
+        componentPanel.add(updateComponent(idCompanyTextField, 150, 10, 80, 20));
+        componentPanel.add(updateComponent(idCourseTextField, 150, 60, 80, 20));
+        componentPanel.add(updateComponent(termTextField, 150, 110, 80, 20));
+        componentPanel.add(updateComponent(countOfTraineesTextField, 150, 160, 80, 20));
         componentPanel.add(updateComponent(addButton, 10, 260, 170, 40));
         componentPanel.add(updateComponent(updateButton, 190, 260, 170, 40));
-        componentPanel.add(updateComponent(getIdLabel, 230, 60, 30, 20));
-        componentPanel.add(updateComponent(getIdTextField, 260, 60, 80, 20));
-        componentPanel.add(updateComponent(getButton, 230, 90, 110, 40));
+        componentPanel.add(updateComponent(getIdLabel, 370, 60, 30, 20));
+        componentPanel.add(updateComponent(getIdTextField, 400, 60, 80, 20));
+        componentPanel.add(updateComponent(getButton, 370, 90, 110, 40));
         componentPanel.add(updateComponent(deleteButton, 370, 260, 170, 40));
         componentPanel.add(updateComponent(backButton, 370, 200, 170, 40));
         add(tablePanel);

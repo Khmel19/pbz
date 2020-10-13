@@ -16,9 +16,10 @@ public class MainFrame extends JFrame {
     private JPanel buttonPanel = new JPanel();
 
     public MainFrame() throws HeadlessException {
+        super("MainFrame");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
-        setSize(600, 550);
+        setSize(600, 350);
         setLayout(null);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -27,12 +28,12 @@ public class MainFrame extends JFrame {
         buttonPanel.setLocation(0, 0);
         buttonPanel.setSize(600, 550);
         buttonPanel.add(updateComponent(teacherButton,10,100,120,50));
-        buttonPanel.add(updateComponent(courseButton,140,100,120,50));
-        buttonPanel.add(updateComponent(organizationButton,270,100,120,50));
-        buttonPanel.add(updateComponent(bidButton,400,100,120,50));
+        buttonPanel.add(updateComponent(courseButton,290,100,120,50));
+        buttonPanel.add(updateComponent(organizationButton,140,100,140,50));
+        buttonPanel.add(updateComponent(bidButton,420,100,120,50));
         buttonPanel.add(updateComponent(priceListButton,10,160,120,50));
-        buttonPanel.add(updateComponent(teacherScheduleButton,140,160,120,50));
-        buttonPanel.add(updateComponent(courseFillingButton,270,160,120,50));
+        buttonPanel.add(updateComponent(teacherScheduleButton,140,160,140,50));
+        buttonPanel.add(updateComponent(courseFillingButton,290,160,120,50));
 
 
         //setSize(601,551);

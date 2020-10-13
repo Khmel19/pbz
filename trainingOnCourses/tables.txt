@@ -60,9 +60,9 @@ CREATE TABLE organization
 INSERT INTO organization(id_course,name,address,telephone,
 email)
 VALUES 
-( '7', 'Training center', 'Мельникайте 2', '234235', 'tcenter@gmail.com'),
-( '8', 'Gods of business', 'Янки Купалы 13', '3534534', 'godsofB@mail.ru'),
-( '9', 'Автошкола Стрела', 'Независимости 44', '457563', 'arrow123@gmail.com');
+( '4', 'Training center', 'Мельникайте 2', '234235', 'tcenter@gmail.com'),
+( '5', 'Gods of business', 'Янки Купалы 13', '3534534', 'godsofB@mail.ru'),
+( '6', 'Автошкола Стрела', 'Независимости 44', '457563', 'arrow123@gmail.com');
 
 
 CREATE TABLE teacher
@@ -88,8 +88,8 @@ CREATE TABLE teacher_course
     id_course INTEGER,
     start_date VARCHAR(15),
     end_date VARCHAR(15),
-    FOREIGN KEY (id_teacher) REFERENCES teacher(id),
-    FOREIGN KEY (id_course) REFERENCES course(id)  
+    FOREIGN KEY (id_teacher) REFERENCES teacher(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_course) REFERENCES course(id) ON DELETE CASCADE  
 );
 
 INSERT INTO teacher_course(id_teacher,id_course,start_date,end_date)
