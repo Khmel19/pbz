@@ -13,7 +13,7 @@ public class CourseFillingFrame extends JFrame {
 
     private JLabel termLabel = new JLabel("TERM : ");
     private JLabel nameLabel = new JLabel("COURSE : ");
-    private JTextField termTextField = new JTextField("");
+    private JTextField termTextField = new JTextField();
     private JTextField nameTextField = new JTextField("");
 
     private JButton getButton = new JButton("Get");
@@ -63,8 +63,8 @@ public class CourseFillingFrame extends JFrame {
                 if (name.equals("")||term==0) {
                     JOptionPane.showMessageDialog(componentPanel, "Input value", "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                String sql="SELECT course.name, teacher_course.start_date,teacher_course.end_date,course.count_of_trainees AS Мест,\n" +
-                        "bid.count_of_trainees AS Набрано FROM course \n" +
+                String sql="SELECT course.name, teacher_course.start_date,teacher_course.end_date,course.count_of_trainees AS a,\n" +
+                        "bid.count_of_trainees AS b FROM course \n" +
                         "JOIN teacher_course ON teacher_course.id_course=course.id\n" +
                         "JOIN bid ON bid.id_course=course.id\n" +
                         "WHERE course.name='"+name+"' AND course.count_of_days="+term;
