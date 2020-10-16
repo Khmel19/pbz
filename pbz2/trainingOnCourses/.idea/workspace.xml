@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="04dcb31a-0185-4548-8bc1-58a1a0a903c7" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - training_on_courses@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - training_on_courses@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - training_on_courses@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="training_on_courses: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - training_on_courses@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="training_on_courses: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="course: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - training_on_courses@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="training_on_courses: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="teacher: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\My Projects\JAVA\pbz2\trainingOnCourses\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iFP2GNFxaCGgPXzkbRzJzdQnbh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="38" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="206" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propGUI" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My Projects\JAVA\pbz2\trainingOnCourses" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.khmel.Main" />
+      <module name="trainingOnCourses" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.khmel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04dcb31a-0185-4548-8bc1-58a1a0a903c7" name="Default Changelist" comment="" />
+      <created>1601500157062</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601500157062</updated>
+      <workItem from="1601500160720" duration="682000" />
+      <workItem from="1601500947058" duration="4972000" />
+      <workItem from="1601751603560" duration="6817000" />
+      <workItem from="1601829257165" duration="14766000" />
+      <workItem from="1601920382092" duration="13210000" />
+      <workItem from="1602003994498" duration="2216000" />
+      <workItem from="1602015038461" duration="8790000" />
+      <workItem from="1602031318191" duration="6000" />
+      <workItem from="1602031526829" duration="217000" />
+      <workItem from="1602074869567" duration="15405000" />
+      <workItem from="1602102732729" duration="9004000" />
+      <workItem from="1602193012080" duration="7224000" />
+      <workItem from="1602242493967" duration="407000" />
+      <workItem from="1602281541356" duration="1364000" />
+      <workItem from="1602519797197" duration="4330000" />
+      <workItem from="1602584127920" duration="1236000" />
+      <workItem from="1602588826842" duration="1511000" />
+      <workItem from="1602859122328" duration="15000" />
+    </task>
+    <task id="LOCAL-00001" summary="added DB.java, Main.main, db.properties">
+      <created>1601509047186</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601509047186</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added MainFrame.java, Table.java, TeacherController.java&#10;updated all package dao and db and Teacher.java">
+      <created>1601942702286</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601942702286</updated>
+    </task>
+    <task id="LOCAL-00003" summary="updated MainFrame.java, BidDao.java, CollaboratorDao.java,&#10;CompanyCollaboratorDao.java, CompanyDao.java, CourseDao.java, OrganizationDao.java, PriceDao.java, TeacherDao.java, Table.java">
+      <created>1602095388893</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602095388893</updated>
+    </task>
+    <task id="LOCAL-00004" summary="updated CRUDController.java, TeacherDao.java, Teacher.java, TeacherFrame.java, Main.java">
+      <created>1602116473793</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602116473793</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added CourseFrame.java, MainFrame.java; updated CourseDao.java, Course.java, Price.java,&#10;TeacherFrame.java, Main.java">
+      <created>1602199969108</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1602199969108</updated>
+    </task>
+    <task id="LOCAL-00006" summary="some fixes in Organization.java, MainFrame.java, OrganizationFrame.java">
+      <created>1602282193339</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602282193339</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added TeacherScheduleFrame.java, PriceListFrame.java. Updated Table.java, MainFrame.java">
+      <created>1602524817096</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602524817096</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed bugs">
+      <created>1602589151160</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602589151160</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added DB.java, Main.main, db.properties" />
+    <MESSAGE value="added MainFrame.java, Table.java, TeacherController.java&#10;updated all package dao and db and Teacher.java" />
+    <MESSAGE value="updated MainFrame.java, BidDao.java, CollaboratorDao.java,&#10;CompanyCollaboratorDao.java, CompanyDao.java, CourseDao.java, OrganizationDao.java, PriceDao.java, TeacherDao.java, Table.java" />
+    <MESSAGE value="updated CRUDController.java, TeacherDao.java, Teacher.java, TeacherFrame.java, Main.java" />
+    <MESSAGE value="added CourseFrame.java, MainFrame.java; updated CourseDao.java, Course.java, Price.java,&#10;TeacherFrame.java, Main.java" />
+    <MESSAGE value="some fixes in Organization.java, MainFrame.java, OrganizationFrame.java" />
+    <MESSAGE value="Added TeacherScheduleFrame.java, PriceListFrame.java. Updated Table.java, MainFrame.java" />
+    <MESSAGE value="fixed bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Notifications" timestamp="1602589346828">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1602589346828" />
+    <state x="361" y="71" key="#SQL_Dialects" timestamp="1602095202578">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1602095202578" />
+    <state x="286" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601753480842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="286" y="142" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1601753480842" />
+    <state x="883" y="186" key="#com.intellij.ide.util.MemberChooser" timestamp="1602521453206">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="883" y="186" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1602521453206" />
+    <state x="378" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601759416453">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="378" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1601759416453" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601920399275">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1601920399275" />
+    <state x="155" y="0" key="CommitChangelistDialog2" timestamp="1602589147796">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="155" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1602589147796" />
+    <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1602281917720">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1536.824@0.0.1536.824" timestamp="1602281917720" />
+    <state width="1493" height="70" key="GridCell.Tab.0.bottom" timestamp="1602585364089">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="70" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602585364089" />
+    <state width="1493" height="70" key="GridCell.Tab.0.center" timestamp="1602585364089">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="70" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602585364089" />
+    <state width="1493" height="70" key="GridCell.Tab.0.left" timestamp="1602585364089">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="70" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602585364089" />
+    <state width="1493" height="70" key="GridCell.Tab.0.right" timestamp="1602585364089">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="70" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602585364089" />
+    <state width="1493" height="2" key="GridCell.Tab.1.bottom" timestamp="1602525233300">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="2" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602525233300" />
+    <state width="1493" height="2" key="GridCell.Tab.1.center" timestamp="1602525233300">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="2" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602525233300" />
+    <state width="1493" height="2" key="GridCell.Tab.1.left" timestamp="1602525233300">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="2" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602525233300" />
+    <state width="1493" height="2" key="GridCell.Tab.1.right" timestamp="1602525233300">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="2" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602525233300" />
+    <state width="187" height="462" key="HiddenNamespacesPopup" timestamp="1601753435460">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="187" height="462" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1601753435460" />
+    <state x="147" y="65" key="MergeDialog" timestamp="1602589267568">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1602589267568" />
+    <state x="481" y="128" key="MultipleFileMergeDialog" timestamp="1602589267575">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="481" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1602589267575" />
+    <state x="518" y="123" key="RollbackChangesDialog" timestamp="1602199817935">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="518" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602199817935" />
+    <state x="242" y="38" key="SettingsEditor" timestamp="1601932141289">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="242" y="38" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601932141289" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1602589154272">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1602589154272" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1602859132425">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1602859132425" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1602242515794">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602242515794" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601506285959">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601506285959" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/khmel/db/DB.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
